@@ -5,17 +5,25 @@ using UnityEngine.UI;
 
 public class ReportManager : Utility.Singleton<ReportManager>
 {
-    public int[] numberOfStoryReports;
+    //public int[] numberOfStoryReports;
     public int totalDays;
     public int reportsPerDay;
     public int CurrentDay = 0;
 
+    public List<Story> dayReports;
+
     public GameObject MessagePanel;
     public GameObject OnAirPanel;
 
+    public Animation SceneTransition;
+
+    public List<Interactable> interactables;
+
+
     void Awake()
     {
-        numberOfStoryReports = new int[totalDays];
+        //numberOfStoryReports = new int[totalDays];
+        dayReports = new List<Story>();
     }
 
 	// Use this for initialization
@@ -28,16 +36,23 @@ public class ReportManager : Utility.Singleton<ReportManager>
 	
 	}
 
-    public bool ReportStory(bool report, int day)
+    public bool ReportStory(Story story, int day)
     {
-        if(numberOfStoryReports[day] < reportsPerDay || !report)
-        {
-            if (report)
-                numberOfStoryReports[day]++;
-            else
-                numberOfStoryReports[day]--;
 
-            if(numberOfStoryReports[day] == reportsPerDay)
+        if(dayReports.Count < reportsPerDay || !story.Report)
+        {
+            if (story.Report)
+            {
+                //numberOfStoryReports[day]++;
+                dayReports.Add(story);
+            }
+            else
+            {
+                //numberOfStoryReports[day]--;
+                dayReports.Remove(story);
+            }
+
+            if (dayReports.Count == reportsPerDay)
             {
                 OnAirPanel.SetActive(true);
                 OnAirPanel.transform.GetChild(0).GetComponent<Text>().text = "You've selected the maximum number of stories you can report today. Do you want to go On Air?";
@@ -53,7 +68,19 @@ public class ReportManager : Utility.Singleton<ReportManager>
 
             return false;
         }
+        Debug.Log("DayReports:" + dayReports.Count);
+    }
 
+    public void EndDay()
+    {
+        Debug.Log("Ending day");
+        SceneTransition.Play();
+        dayReports.Clear();
+        CurrentDay++;
+        foreach(Interactable i in interactables)
+        {
+            i.Invoke("HandleNewDay", 2.0f);
+        }
     }
     
 }

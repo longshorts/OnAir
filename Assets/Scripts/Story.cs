@@ -8,6 +8,9 @@ public abstract class Story : MonoBehaviour
     public bool Report = false;
     public List<Story> StoryDependancies;
 
+    [TextArea(3,10)]
+    public string storyToReport;
+
     // Use this for initialization
     void Start()
     {
@@ -22,12 +25,15 @@ public abstract class Story : MonoBehaviour
 
     public void ToggleReporting()
     {
-        if (ReportManager.Instance.ReportStory(!Report, ReportManager.Instance.CurrentDay))
+        Report = !Report;
+        if (ReportManager.Instance.ReportStory(this, ReportManager.Instance.CurrentDay))
         {
-            Report = !Report;
             HandleReporting();
         }
-        // Report = !Report;
+        else
+        {
+            Report = !Report;
+        }
 
 
     }
