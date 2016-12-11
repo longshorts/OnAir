@@ -1,0 +1,470 @@
+<QuizCollection>
+	<Quizzes>
+		<QuizData id="A">
+			<Title>Question Topic Title</Title>
+			<Body>Which Legislation should you be considering in relation to this enquiry? Also space for longer questions like which Legislation should you be considering in relation to this enquiry?</Body>
+			<Answers>
+				<AnswerData>
+					<AnswerBody>Criminal Law (Consolidation) (Scotland) Act 1995</AnswerBody>
+					<Score>1</Score>
+				</AnswerData>
+				<AnswerData>
+					<AnswerBody>Sexual Offenses Act 2009</AnswerBody>
+					<Score>0</Score>
+				</AnswerData>
+				<AnswerData>
+					<AnswerBody>Civic Goverment (Scotland) Act 1982</AnswerBody>
+					<Score>3</Score>
+				</AnswerData>
+				<AnswerData>
+					<AnswerBody>Communications Act 2003</AnswerBody>
+					<Score>1</Score>
+				</AnswerData>
+			</Answers>
+		</QuizData>
+		<QuizData id="Laptop">
+			<Title>Laptop found</Title>
+			<Body>You have found a laptop. It is plugged in, however it is not turned on. The occupants state that it belongs to a family member whom is on a foreign holiday.</Body>
+			<Answers>
+				<AnswerData>
+					<AnswerBody>Ask for Telephone contact details for the owner to contact them and confirm ownership</AnswerBody>
+				</AnswerData>
+				<AnswerData>
+					<AnswerBody>Seize the device and all cables for forensic examination</AnswerBody>
+					<UseItem>True</UseItem>
+					<Score>2</Score>
+				</AnswerData>
+				<AnswerData>
+					<AnswerBody>Power on the laptop and see if there are any documents or pictures which can identify the owner</AnswerBody>
+				</AnswerData>
+				<AnswerData>
+					<AnswerBody>Remove the hard drive from the device and leave the laptop at locus, as it belongs to another party</AnswerBody>
+				</AnswerData>
+			</Answers>
+		</QuizData>
+		<QuizData id="RansomwareComputer">
+			<Title>Ransomware Found</Title>
+			<Body>Ransomware has locked the user out of using the computer until a fee is paid into a specified account. What do you do?</Body>
+			<Answers>
+				<AnswerData>
+					<AnswerBody>Leave the computer, and report it to your malware team</AnswerBody>
+				</AnswerData>
+				<AnswerData>
+					<AnswerBody>Seize the device and all cables for forensic examination</AnswerBody>
+					<UseItem>True</UseItem>
+					<Score>2</Score>
+				</AnswerData>
+				<AnswerData>
+					<AnswerBody>Pay the money to track where it goes</AnswerBody>
+				</AnswerData>
+				<AnswerData>
+					<AnswerBody>Leave it alone</AnswerBody>
+				</AnswerData>
+			</Answers>
+		</QuizData>
+    
+    <!--ITEM DECLARATIONS-->
+    <QuizData id="ExternalHardDrive">
+      <Title>External Hard Drive Found</Title>
+      <Body>What do you do?</Body>
+      <Answers>
+        <AnswerData>
+          <AnswerBody>Unplug the hard drive and confiscate it</AnswerBody>
+          <UseItem>True</UseItem>
+          <Score>2</Score>
+        </AnswerData>
+        <AnswerData>
+          <AnswerBody>Use the safely eject device option on the laptop</AnswerBody>
+          <Score>5</Score>
+          <SubQuizData id="ExternalHardDrive_Ejected">
+            <Title>External Hard Drive Found</Title>
+            <Body>Hard drive now can be safely removed from the computer.</Body>
+            <Answers>
+              <AnswerData>
+                <AnswerBody>Unplug the hard drive and confiscate it</AnswerBody>
+                <UseItem>True</UseItem>
+                <Score>0</Score>
+              </AnswerData>
+              <AnswerData>
+                <AnswerBody>Leave it alone</AnswerBody>
+                <Score>-3</Score>
+              </AnswerData>
+            </Answers>
+          </SubQuizData>
+        </AnswerData>
+        <AnswerData>
+          <AnswerBody>Leave it alone</AnswerBody>
+          <Score>0</Score>
+        </AnswerData>
+      </Answers>
+    </QuizData>
+
+    <QuizData id="DesktopPC">
+      <Title>Desktop PC Found</Title>
+      <Body>The PC is plugged in and running</Body>
+      <Answers>
+        
+        <AnswerData>
+          <AnswerBody>Unplug the desktop</AnswerBody>
+          <Score>0</Score>
+          <SubQuizData id="DesktopPC_Unplugged">
+            <Title>Desktop PC Found</Title>
+            <Body>The PC has been unplugged and is no longer running</Body>
+            <Answers>
+              <AnswerData>
+                <AnswerBody>Attempt to remove the internal hard drive</AnswerBody>
+                <Score>0</Score>
+                <SubQuizData id="DesktopPC_Unplugged_HDRemoved">
+                  <Title>Desktop PC Found</Title>
+                  <Body>The PC has been unplugged and is no longer running. You have removed the internal hard drive.</Body>
+                  <Answers>
+                    <AnswerData>
+                      <AnswerBody>Confiscate the internal hard drive</AnswerBody>
+                      <UseItem>True</UseItem>
+                      <Score>1</Score>
+                    </AnswerData>
+                    <AnswerData>
+                      <AnswerBody>Leave the hard drive</AnswerBody>
+                      <Score>0</Score>
+                    </AnswerData>
+                  </Answers>
+                </SubQuizData>
+              </AnswerData>
+              <AnswerData>
+                <AnswerBody>Confiscate the desktop.</AnswerBody>
+                <Score>2</Score>
+                <UseItem>True</UseItem>
+              </AnswerData>
+              <AnswerData>
+                <AnswerBody>Leave it alone</AnswerBody>
+                <Score>-3</Score>
+              </AnswerData>
+            </Answers>
+          </SubQuizData>
+        </AnswerData>
+        
+        <AnswerData>
+          <AnswerBody>Shut down the desktop</AnswerBody>
+          <Score>0</Score>
+          <SubQuizData id="DesktopPC_Shutdown">
+            <Title>Desktop PC Found</Title>
+            <Body>The PC has been shut down.</Body>
+            <Answers>
+              <AnswerData>
+                <AnswerBody>Attempt to remove the internal hard drive</AnswerBody>
+                <Score>0</Score>
+                <SubQuizData id="DesktopPC_Unplugged_HDRemoved">
+                  <Title>Desktop PC Found</Title>
+                  <Body>The PC has been unplugged and is no longer running. You have removed the internal hard drive.</Body>
+                  <Answers>
+                    <AnswerData>
+                      <AnswerBody>Confiscate the internal hard drive</AnswerBody>
+                      <UseItem>True</UseItem>
+                      <Score>1</Score>
+                    </AnswerData>
+                    <AnswerData>
+                      <AnswerBody>Leave the hard drive</AnswerBody>
+                      <Score>0</Score>
+                    </AnswerData>
+                  </Answers>
+                </SubQuizData>
+              </AnswerData>
+              <AnswerData>
+                <AnswerBody>Confiscate the desktop</AnswerBody>
+                <UseItem>True</UseItem>
+                <Score>2</Score>
+              </AnswerData>
+              <AnswerData>
+                <AnswerBody>Leave it alone</AnswerBody>
+                <Score>0</Score>
+              </AnswerData>
+            </Answers>
+          </SubQuizData>
+        </AnswerData>
+        
+        <AnswerData>
+          <AnswerBody>Call a specialist to do a RAM capture and confiscate the desktop</AnswerBody>
+          <Score>4</Score>
+          <UseItem>True</UseItem>
+        </AnswerData>
+      </Answers>
+    </QuizData>
+
+    <QuizData id="Smartphone">
+      <Title>Smartphone Found</Title>
+      <Body>The smartphone is on and connected to data through a mobile network</Body>
+      <Answers>
+        <AnswerData>
+          <AnswerBody>Confiscate it</AnswerBody>
+          <Score>-1</Score>
+          <UseItem>True</UseItem>
+        </AnswerData>
+        <AnswerData>
+          <AnswerBody>Turn it off to prevent tampering</AnswerBody>
+          <Score>-3</Score>
+          <SubQuizData id="Smartphone_Off">
+            <Title>Smartphone Found</Title>
+            <Body>The smartphone is now off</Body>
+            <Answers>
+              <AnswerData>
+                <AnswerBody>Confiscate it</AnswerBody>
+                <Score>3</Score>
+                <UseItem>True</UseItem>
+              </AnswerData>
+              <AnswerData>
+                <AnswerBody>Leave it alone</AnswerBody>
+                <Score>-3</Score>
+              </AnswerData>
+            </Answers>
+          </SubQuizData>
+        </AnswerData>
+        <AnswerData>
+          <AnswerBody>Place it in a faraday cage</AnswerBody>
+          <Score>5</Score>
+          <SubQuizData id="Smartphone_Cage">
+            <Title>Smartphone Found</Title>
+            <Body>The phone has been placed in a faraday cage</Body>
+            <Answers>
+              <AnswerData>
+                <AnswerBody>Confiscate it</AnswerBody>
+                <Score>3</Score>
+                <UseItem>True</UseItem>
+              </AnswerData>
+              <AnswerData>
+                <AnswerBody>Leave it alone</AnswerBody>
+                <Score>-1</Score>
+              </AnswerData>
+            </Answers>
+          </SubQuizData>
+        </AnswerData>
+      </Answers>
+    </QuizData>
+
+    <QuizData id="Tablet">
+      <Title>Tablet Found</Title>
+      <Body>The tablet is on and connected to data through WIFI</Body>
+      <Answers>
+        <AnswerData>
+          <AnswerBody>Confiscate it</AnswerBody>
+          <Score>-1</Score>
+          <UseItem>True</UseItem>
+        </AnswerData>
+        <AnswerData>
+          <AnswerBody>Turn it off to prevent tampering</AnswerBody>
+          <Score>-3</Score>
+          <SubQuizData id="Tablet_Off">
+            <Title>Tablet Found</Title>
+            <Body>The tablet is now off</Body>
+            <Answers>
+              <AnswerData>
+                <AnswerBody>Confiscate it</AnswerBody>
+                <Score>3</Score>
+                <UseItem>True</UseItem>
+              </AnswerData>
+              <AnswerData>
+                <AnswerBody>Leave it alone</AnswerBody>
+                <Score>-3</Score>
+              </AnswerData>
+            </Answers>
+          </SubQuizData>
+        </AnswerData>
+        <AnswerData>
+          <AnswerBody>Place it in a faraday cage</AnswerBody>
+          <Score>5</Score>
+          <SubQuizData id="Tablet_Cage">
+            <Title>Tablet Found</Title>
+            <Body>The tablet has been placed in a faraday cage</Body>
+            <Answers>
+              <AnswerData>
+                <AnswerBody>Confiscate it</AnswerBody>
+                <Score>3</Score>
+                <UseItem>True</UseItem>
+              </AnswerData>
+              <AnswerData>
+                <AnswerBody>Leave it alone</AnswerBody>
+                <Score>-1</Score>
+              </AnswerData>
+            </Answers>
+          </SubQuizData>
+        </AnswerData>
+      </Answers>
+    </QuizData>
+
+    <QuizData id="Camera">
+      <Title>Camera found</Title>
+      <Body>The camera is off and contains an SD card</Body>
+      <Answers>
+        <AnswerData>
+          <AnswerBody>Turn it on</AnswerBody>
+          <Score>-1</Score>
+          <SubQuizData id="Camera_On">
+            <Title>Smartphone Found</Title>
+            <Body>The smartphone is on and contains an SD card</Body>
+            <Answers>
+              <AnswerData>
+                <AnswerBody>Browse through the files via the camera</AnswerBody>
+                <Score>-2</Score>
+                <SubQuizData id="Camera_On_Browsed">
+                  <Title>Smartphone Found</Title>
+                  <Body>The smartphone is on and you have browsed the stored photos, finding no indecent material.</Body>
+                  <Answers>
+                    <AnswerData>
+                      <AnswerBody>Confiscate the camera</AnswerBody>
+                      <Score>1</Score>
+                      <UseItem>True</UseItem>
+                    </AnswerData>
+                    <AnswerData>
+                      <AnswerBody>Leave it alone</AnswerBody>
+                      <Score>-2</Score>
+                    </AnswerData>
+                  </Answers>
+                </SubQuizData>
+              </AnswerData>
+            </Answers>
+          </SubQuizData>
+        </AnswerData>
+        <AnswerData>
+          <AnswerBody>Remove the SD card</AnswerBody>
+          <Score>-3</Score>
+          <SubQuizData id="Camera_SDRemoved">
+            <Title>Camera found</Title>
+            <Body>The camera is off, and you have removed the SD card.</Body>
+            <Answers>
+              <AnswerData>
+                <AnswerBody>Confiscate the SD card</AnswerBody>
+                <Score>1</Score>
+                <UseItem>True</UseItem>
+              </AnswerData>
+              <AnswerData>
+                <AnswerBody>Confiscate the camera and SD card</AnswerBody>
+                <Score>3</Score>
+                <UseItem>True</UseItem>
+              </AnswerData>
+              <AnswerData>
+                <AnswerBody>Leave it alone</AnswerBody>
+                <Score>-2</Score>
+              </AnswerData>
+            </Answers>
+          </SubQuizData>
+        </AnswerData>
+        <AnswerData>
+          <AnswerBody>Confiscate the camera</AnswerBody>
+          <Score>2</Score>
+          <UseItem>True</UseItem>
+        </AnswerData>
+      </Answers>
+    </QuizData>
+
+    <QuizData id="SmartTV">
+      <Title>Smart TV Found</Title>
+      <Body>The Smart TV is currently off</Body>
+      <Answers>
+        <AnswerData>
+          <AnswerBody>Turn it on</AnswerBody>
+          <Score>-1</Score>
+          <SubQuizData id="SmartTV_On">
+            <Title>Smart TV Found</Title>
+            <Body>The Smart TV is currently on</Body>
+            <Answers>
+              <AnswerData>
+                <AnswerBody>Browse through stored files</AnswerBody>
+                <Score>-1</Score>
+                <SubQuizData id="SmartTV_On_Browsed">
+                  <Title>Smart TV Found</Title>
+                  <Body>The Smart TV is currently on and no inappropriate files were found.</Body>
+                  <Answers>
+                    <AnswerData>
+                      <AnswerBody>Leave it alone</AnswerBody>
+                      <Score>-2</Score>
+                    </AnswerData>
+                    <AnswerData>
+                      <AnswerBody>Confiscate it</AnswerBody>
+                      <Score>2</Score>
+                    </AnswerData>
+                  </Answers>
+                </SubQuizData>
+              </AnswerData>
+            </Answers>
+          </SubQuizData>
+        </AnswerData>
+        <AnswerData>
+          <AnswerBody>Leave it alone</AnswerBody>
+          <Score>-2</Score>
+        </AnswerData>
+        <AnswerData>
+          <AnswerBody>Confiscate it</AnswerBody>
+          <Score>2</Score>
+        </AnswerData>
+      </Answers>
+    </QuizData>
+
+    <QuizData id="USBStick">
+      <Title>USB Stick found</Title>
+      <Body>A 16GB USB memory stick has been found.</Body>
+      <Answers>
+        <AnswerData>
+          <AnswerBody>Plug it into the suspect's computer to inspect files</AnswerBody>
+          <Score>-5</Score>
+          <SubQuizData id="USBStick_Inspect">
+            <Title>USB Stick found</Title>
+            <Body>The USB stick has been browsed through the suspect's computer</Body>
+            <Answers>
+              <AnswerData>
+                <AnswerBody>Leave it</AnswerBody>
+                <Score>-2</Score>
+              </AnswerData>
+              <AnswerData>
+                <AnswerBody>Unplug it</AnswerBody>
+                <Score>-2</Score>
+                <SubQuizData id="USBStick_Inspect_Eject">
+                  <Title>USB Stick found</Title>
+                  <Body>The USB stick has been browsed through and has been removed from the computer</Body>
+                  <Answers>
+                    <AnswerData>
+                      <AnswerBody>Leave it</AnswerBody>
+                      <Score>-2</Score>
+                    </AnswerData>
+                    <AnswerData>
+                      <AnswerBody>Confiscate it</AnswerBody>
+                      <Score>2</Score>
+                      <UseItem>True</UseItem>
+                    </AnswerData>
+                  </Answers>
+                </SubQuizData>
+              </AnswerData>
+              <AnswerData>
+                <AnswerBody>Use the 'Safely eject' function</AnswerBody>
+                <Score>1</Score>
+                <SubQuizData id="USBStick_Inspect_SafeEject">
+                  <Title>USB Stick found</Title>
+                  <Body>The USB stick has been browsed through and is safe to remove from the computer</Body>
+                  <Answers>
+                    <AnswerData>
+                      <AnswerBody>Leave it</AnswerBody>
+                      <Score>-2</Score>
+                    </AnswerData>
+                    <AnswerData>
+                      <AnswerBody>Confiscate it</AnswerBody>
+                      <Score>2</Score>
+                      <UseItem>True</UseItem>
+                    </AnswerData>
+                  </Answers>
+                </SubQuizData>
+              </AnswerData>
+            </Answers>
+          </SubQuizData>
+        </AnswerData>
+        <AnswerData>
+          <AnswerBody>Leave it</AnswerBody>
+          <Score>-2</Score>
+        </AnswerData>
+        <AnswerData>
+          <AnswerBody>Confiscate it</AnswerBody>
+          <Score>3</Score>
+          <UseItem>True</UseItem>
+        </AnswerData>
+      </Answers>
+    </QuizData>
+    
+	</Quizzes>
+</QuizCollection>
